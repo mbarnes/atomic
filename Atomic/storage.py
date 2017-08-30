@@ -160,6 +160,7 @@ class Storage(Atomic):
         util.call(["umount", root + "/devicemapper"], stderr=DEVNULL)
         util.call(["umount", root + "/overlay"], stderr=DEVNULL)
         util.call(["umount", root + "/overlay2"], stderr=DEVNULL)
+        util.call(["umount", root], stderr=DEVNULL)
         shutil.rmtree(root)
         os.mkdir(root)
         try:
