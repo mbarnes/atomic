@@ -181,7 +181,7 @@ class Storage(Atomic):
             if self.args.rootfs and self.args.lvname:
                 if self.args.lvsize:
                     try:
-                        cmd = 'bash -c ". /usr/lib/docker-storage-setup/libdss.sh; check_data_size_syntax {0}"'.format(self.args.lvsize)
+                        cmd = 'bash -c ". /usr/share/container-storage-setup/libcss.sh; check_data_size_syntax {0}"'.format(self.args.lvsize)
                         util.check_call(cmd)
                     except subprocess.CalledProcessError:
                         raise ValueError("Invalid format for --lvsize")
